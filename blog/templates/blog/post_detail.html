@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="post">
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <div>
+            <!--<p>published: {#  #}{# post.published_date #}}</p>-->
+        </div>
+        <div>
+            <p>Created: {{ post.created_date }}</p>
+        </div>
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    {% for image in imageList %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Car image-->
+                           {% if image.image %}
+                               <img class="card-img-top" src="{{ image.image.url}}" alt="..." />
+                           {% endif %}
+                            <!-- CAR details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder"> {{ image.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>{% endfor %}
+                </div>
+            </div>
+        </section>
+        <p>{{ post.text|linebreaks }}</p>
+        <p>Written by {{ post.author }}
+          {% if post.category %}
+            on {{ post.category }}
+          {% endif %}
+        </p>
+    </div>
+{% endblock content %}

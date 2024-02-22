@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+	{% block content %}
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    {% for image in post %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Car image-->
+                           {% if image.image %}
+                               <img class="card-img-top" src="{{ image.image.url}}" alt="..." />
+                           {% endif %}
+                            <!-- CAR details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder"> {{ image.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>{% endfor %}
+                </div>
+            </div>
+        </section>
+
+    {% endblock content %}
+

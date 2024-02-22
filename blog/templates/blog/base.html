@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html><html lang="en">
+    <head>
+        <title>ΣΕΡΡΕΣ ΑΜΕΑ</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static '/css/styles.css'  %}">
+        <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/gridfooter.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="page-header">
+            <div class="content container">
+                <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <h1 >Σύλλογος Γονέων και Φίλων Παιδιών Ατόμων με Αναπηρία Ν. Σερρών</h1>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="{% static 'images/logo2.jpg' %}">
+                        </div>
+                </div>
+            </div>
+        </div>
+        {%  include 'blog/navbar.html' %}
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-2">
+                    <br/>
+                </div>
+
+                <div class="col-md-8">
+
+                   {% block content %}
+                   {% endblock %}
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </body>
+    {%  include 'blog/footer.html' %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/el_GR/sdk.js#xfbml=1&version=v19.0" nonce="sWy3zG0H"></script>
+</html>

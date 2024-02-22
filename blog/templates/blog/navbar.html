@@ -1,0 +1,29 @@
+{% load static  %}
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <div class="content container">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <a class="navbar-brand" href="{% url 'post_list' %}">Αρχική</a>
+                                <a class="navbar-brand" href="{% url 'istoria' %}">Ιστορία</a>
+                                <a class="navbar-brand" href="{% url 'announcements' %}">Ανακοινώσεις</a>
+                                <a class="navbar-brand" href="{% url 'deltia_typou' %}">Δελτία Τύπου</a>
+                                <a class="navbar-brand" href="{% url 'ergastirio' %}">Εργαστήριο</a>
+                                <a class="navbar-brand" href="#footer">Επικοινωνία</a>
+                            </div>
+                        <div class="col-md-2">
+                            <div class="col-sm-4"> Αναζήτηση </div>
+                                <div class="col-sm-8">
+                                    <form type="get" action=".">
+                                        <input type="text" name="txt">
+                                        <input type="submit" value="Search">
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
