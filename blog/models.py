@@ -22,7 +22,7 @@ class Post(models.Model):
 
 class Image(models.Model):
     active = models.BooleanField(default=True)
-    postID = models.ForeignKey('Post', null=True, on_delete=models.CASCADE, )
+    postID = models.ForeignKey('Post', null=True, blank=True, on_delete=models.CASCADE,)
     image = models.FileField(null=True)
     title = models.CharField(max_length=120)
 
