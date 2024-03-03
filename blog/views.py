@@ -12,12 +12,12 @@ def post_list(request):
         cat = False
     if cat is False:
         if txt == '':
-            posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+            posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date',)
         else:
             posts = Post.objects.filter(published_date__lte=timezone.now()).filter(text__contains=txt).order_by(
-                'published_date')
+                '-published_date')
     else:
-        posts = Post.objects.filter(published_date__lte=timezone.now()).filter(category=cat).order_by('published_date')
+        posts = Post.objects.filter(published_date__lte=timezone.now()).filter(category=cat).order_by('-published_date')
 
     return render(request, 'blog/post_list.html', {'posts': posts})
 
@@ -49,12 +49,12 @@ def announcement(request):
         cat = False
     if cat is False:
         if txt == '':
-            posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+            posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
         else:
             posts = Post.objects.filter(published_date__lte=timezone.now()).filter(text__contains=txt).order_by(
-                'published_date')
+                '-published_date')
     else:
-        posts = Post.objects.filter(published_date__lte=timezone.now()).filter(category=cat).order_by('published_date')
+        posts = Post.objects.filter(published_date__lte=timezone.now()).filter(category=cat).order_by('-published_date')
 
     return render(request, 'blog/announcement.html', {'posts': posts})
 
@@ -68,16 +68,16 @@ def deltia(request):
         cat = False
     if cat is False:
         if txt == '':
-            posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+            posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
         else:
             posts = Post.objects.filter(published_date__lte=timezone.now()).filter(text__contains=txt).order_by(
-                'published_date')
+                '-published_date')
     else:
-        posts = Post.objects.filter(published_date__lte=timezone.now()).filter(category=cat).order_by('published_date')
+        posts = Post.objects.filter(published_date__lte=timezone.now()).filter(category=cat).order_by('-published_date')
 
     return render(request, 'blog/deltia_typou.html', {'posts': posts})
 
 
 def image_list(request):
-    post = Image.objects.all()
+    post = Image.objects.filter(active=1,)
     return render(request, 'blog/ergastirio.html', {'post': post}, )

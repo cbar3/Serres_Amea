@@ -1,6 +1,7 @@
 .timeWrapperFooter{
 
     min-width: 100%;
+    font-size: 15px;
   }
   .dayDateFooter,.hoursFooter,.timeZoneFooter{
     text-align: center;
